@@ -40,8 +40,4 @@ public class Viagem {
         this.rota = rota;
     }
 
-    public static void main(String[] args) {
-
-    }
-
 }
