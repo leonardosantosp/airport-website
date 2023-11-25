@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RelatorioPassageiroViagem" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT passageiroviagem.idPassageiroViagem, passageiroviagem.precoViagem, passageiro.nome AS nomepassageiro, classe.tipo, 
+classe.preco,viagem.linhaAerea, viagem.rota, date_format(viagem.`data`,"%d/%m/%Y") AS dataviagem, passageiro.cpf FROM passageiroviagem,
+passageiro, classe, viagem WHERE passageiroviagem.passageiro = passageiro.idPassageiro 
+AND passageiroviagem.classe = classe.idClasse AND passageiroviagem.viagem = viagem.idViagem]]>
+	</queryString>
+	<field name="idPassageiroViagem" class="java.lang.Integer"/>
+	<field name="precoViagem" class="java.lang.Float"/>
+	<field name="nomepassageiro" class="java.lang.String"/>
+	<field name="tipo" class="java.lang.String"/>
+	<field name="preco" class="java.lang.Float"/>
+	<field name="linhaAerea" class="java.lang.String"/>
+	<field name="rota" class="java.lang.Integer"/>
+	<field name="dataviagem" class="java.lang.String"/>
+	<field name="cpf" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="121" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="1" width="555" height="120" backcolor="#E6E6E6"/>
+				<textElement/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<image hAlign="Center">
+				<reportElement x="0" y="0" width="150" height="120"/>
+				<imageExpression><![CDATA["C:\\Users\\Asus\\Desktop\\TrabTuio\\ProjetoAeroporto\\web\\imagens\\rna vetor.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="163" y="28" width="392" height="36"/>
+				<textElement>
+					<font size="20" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Relatório Da Viagem dosPassageiros]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="34" width="47" height="27"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="58" y="34" width="41" height="27"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Preço]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="111" y="34" width="73" height="27"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Passageiro]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="184" y="34" width="51" height="27"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Classe]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="247" y="34" width="51" height="27"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="308" y="34" width="54" height="27"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Preço Classe]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="436" y="34" width="51" height="27"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CPF]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="503" y="34" width="51" height="27"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Linha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="373" y="34" width="51" height="27"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Rota]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="-1" y="0" width="59" height="20"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idPassageiroViagem}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="58" y="0" width="41" height="20"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{precoViagem}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="111" y="0" width="73" height="20"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nomepassageiro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="184" y="0" width="63" height="20"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tipo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="247" y="0" width="61" height="20"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dataviagem}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="308" y="0" width="54" height="20"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{preco}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="436" y="0" width="63" height="20"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cpf}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="504" y="0" width="51" height="20"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{linhaAerea}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="373" y="0" width="51" height="20"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rota}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="504" y="41" width="50" height="13" backcolor="#E6E6E6"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="115" y="41" width="389" height="13" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement mode="Opaque" x="-1" y="41" width="116" height="13" backcolor="#E6E6E6"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

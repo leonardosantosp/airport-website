@@ -1,0 +1,242 @@
+.background{
+	background-color: lightgrey;
+}
+
+.texto-inicio{
+	color:#00BFFF;
+	font-family: Anton;
+	font-size: 25px;
+	margin: 30px;
+	margin-left: 160px;
+	padding-bottom: 5px;
+	color: white;
+}
+
+.carosel-left{
+	float: left;
+	margin-left: 30px;
+	margin-bottom: 90px;
+}
+
+.carousel-frase{
+	margin:0 auto;
+	width:700px;
+	margin-top:40px;
+	z-index: 0.5;
+}
+
+.menu{
+    margin: 0;
+    background-color: white;
+	list-style: none;
+	margin-top: 5px;
+        width: 50%;
+        margin-bottom: 20px;
+}
+
+ul li{ 
+	display: inline-block;
+}
+
+ul{
+	list-style: none;
+	position: relative;
+	margin: 0px;
+	padding: 0px;
+}
+
+li a{
+	color: black;
+	text-decoration: none;
+	padding: 15px;
+	display: block;
+}
+
+
+ul li:hover{
+	background: lightgrey;
+}
+
+ul ul{
+	position: absolute;
+	min-width: 200px;
+	display: none;
+	background: lightgrey
+}
+
+ul ul li{
+	display: block;
+	background: #e3e3e3;
+        margin-left: -33px;
+}
+
+ul li:hover ul{
+	display: block;
+}
+
+.navbar{
+	background-color: white;
+}
+
+.button-search{
+	margin-left: 450px;
+}
+
+.zindex-li{
+	z-index: 1;
+}
+
+nav.navmenu{
+    display: flex;
+    background: white;
+    align-items: center;
+}
+
+.listbemvindo{
+    align-items: center;
+}
+
+.listlogoff{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0px;
+    justify-content: flex-end;
+    margin-right: 20px;
+    text-decoration:none;
+}
+
+.btnlogoff{
+    background-color: lightgray;
+    color: black;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+}
+
+.btnlogoff img{
+    height: 25px;
+    margin-right: 10px;
+}
+
+.txtbemvindo{
+    margin-right: 20px;
+}
+
+.contentLogin{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+}
+
+.btnOk input.imputLogin{
+    width: 108px;
+    height: 49px;
+}
+
+.btnOk{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.formLogin{
+    padding: 90px;
+    background-color: lightgray;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bodyLogin{
+    background-color: gray;
+}
+
+.navigationAbout{
+    background: white;
+}
+
+.txtQuemSomos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.txtQuemSomos h2 {
+    font-size: 20px;
+    margin: 25px 45px;
+    
+}
+
+.imgConteudo img {
+    height: 350px;
+    cursor: pointer;
+}
+
+.conteudoQuemSomos {
+    display: flex;
+    gap: 20px;
+}
+
+.titleDesenvolvedores{
+    padding-bottom: 40px;
+    padding-top: 40px;
+}
+
+.imgpedro img{
+    width: 320px;
+}
+
+.imgConteudo img:hover {
+    border: 1px solid;
+}
+
+.txtSobre{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+   margin-top: 100px;
+   margin-right: 100px;
+   margin-left: 100px;
+   background: white;
+   
+}
+
+.txtSobre h1{
+    font-size: 20px;
+    text-align: center;
+    line-height: 50px;
+}
+
+.contentContato{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: lightcyan;
+    padding: 40px 0px;
+}
+
+body.contatoBg{
+    background: white;
+}
+
+.servicoTxt{
+    text-align: center;
+    
+}
+
+.ajusteLogo img{
+    display: flex;
+    align-items: center;
+    margin-top: -208px;
+
+}
+
+.txtAjuste{
+    font-size: 30px;
+}

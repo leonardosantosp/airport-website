@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RelatorioRota" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT rota.idRota, rota.distanciaRota, aviao.modelo, aeroporto.nome AS aeroportoDestino, aeroporto.nome AS aeroportoSaida, 
+cidade.nome AS localsaida, cidade.nome AS localdestino FROM rota, 
+cidade, aeroporto, aviao WHERE rota.localSaida = cidade.codigo and rota.aeroportoSaida = aeroporto.idAeroporto 
+AND rota.aviao = aviao.idAviao 
+]]>
+	</queryString>
+	<field name="idRota" class="java.lang.Integer"/>
+	<field name="distanciaRota" class="java.lang.Float"/>
+	<field name="modelo" class="java.lang.String"/>
+	<field name="aeroportoDestino" class="java.lang.String"/>
+	<field name="aeroportoSaida" class="java.lang.String"/>
+	<field name="localsaida" class="java.lang.String"/>
+	<field name="localdestino" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="133" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="120" backcolor="#E6E6E6"/>
+				<textElement/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<image hAlign="Center">
+				<reportElement x="0" y="0" width="150" height="120"/>
+				<imageExpression><![CDATA["C:\\Users\\Asus\\Desktop\\TrabTuio\\ProjetoAeroporto\\web\\imagens\\rna vetor.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="181" y="22" width="237" height="36"/>
+				<textElement>
+					<font size="24" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Relatório das Rotas]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="34" width="38" height="27"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="58" y="34" width="56" height="27"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Saída]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="136" y="34" width="68" height="27"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Destino]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="216" y="34" width="56" height="27"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Avião]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="306" y="34" width="57" height="27"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Distância]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="377" y="34" width="78" height="27"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AE Saída]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="469" y="34" width="67" height="27"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AE Destino]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="31" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="58" height="20"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idRota}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="58" y="0" width="78" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{localsaida}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="136" y="0" width="80" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{localdestino}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="216" y="0" width="90" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{modelo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="307" y="0" width="70" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{distanciaRota}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="377" y="0" width="92" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{aeroportoSaida}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="469" y="0" width="86" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{aeroportoDestino}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement mode="Opaque" x="119" y="41" width="389" height="13" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement mode="Opaque" x="3" y="41" width="116" height="13" backcolor="#E6E6E6"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="508" y="41" width="50" height="13" backcolor="#E6E6E6"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
